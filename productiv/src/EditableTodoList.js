@@ -11,14 +11,15 @@ import EditableTodo from "./EditableTodo";
  * TodoApp -> EditableTodoList -> [ EditableTodo, ... ]
  */
 
-function EditableTodoList() {
+function EditableTodoList({ todos, update, remove }) {
+
+  //loop over todos array
+  //instantial teach todo as EditableTodo
+
   return (
-      <div>
-        {/*   FIXME  */}
-        <EditableTodo />
-        <EditableTodo />
-        <EditableTodo />
-      </div>
+    <div>
+      {todos.map(t => <EditableTodo todo={t} update={update} remove={remove}/>)}
+    </div>
   );
 }
 
