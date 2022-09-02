@@ -1,6 +1,12 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import App from "./App";
+
+let renderedApp;
+
+// beforeEach(function () {
+//   renderedApp = render(<App />);
+// });
 
 describe("productiv app", function () {
   it("renders without crashing", function () {
@@ -12,12 +18,18 @@ describe("productiv app", function () {
     expect(result.queryByText("Prøductïv")).toBeInTheDocument();
   });
 
-  it ("rendered quotes app", function () {
-    const result = render(<App />);
-    expect(result.queryByText("Click here for an inspirational quøte!")).toBeInTheDocument();
-  });
+  // it ("rendered quotes app", function () {
+  //   const result = render(<App />);
+  //   expect(result.queryByText("Click here for an inspirational quøte!")).toBeInTheDocument();
+  // });
 
-  //render initial todos on startup
+  it("renders initial todos on startup", function () {
+    const result = render(<App />);
+    //expect(result.getByText('Make dinner')).toBeInTheDocument();
+    
+    // need to reference container
+    //expect(result.querySelectorAll("div[class='EditableTodo']").length).toEqual(3);
+  });
 
   //render top todo on startup
 
