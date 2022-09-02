@@ -28,8 +28,6 @@ function TodoForm({ initialFormData, handleSave }) {
     setFormData({title: "", description: "", priority: 1});
   }
 
-
-
   return (
     <form className="NewTodoForm" onSubmit={handleSubmit}>
       <div className="mb-3">

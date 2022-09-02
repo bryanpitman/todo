@@ -30,6 +30,11 @@ function TodoApp({ initialTodos }) {
 
   /** update a todo with updatedTodo */
   function update(updatedTodo) {
+    const updatedTodos = [...todos];
+    //find todo with matching ID and update
+    setTodos(updatedTodos.map(t => (
+      t.id === updatedTodo.id ? t = updatedTodo : t = t
+    )))
   }
 
   /** delete a todo by id */
@@ -60,7 +65,7 @@ function TodoApp({ initialTodos }) {
 
           <section>
             <h3 className="mb-3">Add Nü</h3>
-            <TodoForm initialFormData={{}} handleSave={create}/>
+            <TodoForm initialFormData={{priority:1}} handleSave={create}/>
           </section>
         </div>
 
