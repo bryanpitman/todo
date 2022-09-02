@@ -11,7 +11,7 @@ import TodoForm from "./TodoForm";
  *
  * EditableTodoList -> EditableTodo -> { Todo, TodoForm }
  */
-
+//  /TODO: create is edit state
 function EditableTodo({ todo, update, remove }) {
 
   /** Toggle if this is being edited */
@@ -22,19 +22,19 @@ function EditableTodo({ todo, update, remove }) {
   }
 
   /** Call remove fn passed to this. */
-  function handleDelete() { 
+  function handleDelete() {
     remove(todo.id);
   }
 
   /** Edit form saved; toggle isEditing and update in ancestor. */
   //TODO: how to destructure?
-  function handleSave(formData) { 
+  function handleSave(formData) {
     todo.title = formData.title;
     todo.description = formData.description;
     todo.priority = formData.priority;
     todo.isEditing = false;
-    update(todo.id);
-  } 
+    update(todo);
+  }
 
   return (
     <div className="EditableTodo">
@@ -54,9 +54,9 @@ function EditableTodo({ todo, update, remove }) {
               Del
             </button>
           </div>
-          <Todo id={todo.id} 
-                title={todo.title} 
-                description={todo.description} 
+          <Todo id={todo.id}
+                title={todo.title}
+                description={todo.description}
                 priority={todo.priority} />
         </div>
       }

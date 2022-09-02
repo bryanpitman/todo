@@ -33,7 +33,7 @@ function TodoApp({ initialTodos }) {
     const updatedTodos = [...todos];
     //find todo with matching ID and update
     setTodos(updatedTodos.map(t => (
-      t.id === updatedTodo.id ? t = updatedTodo : t = t
+      t.id === updatedTodo.id ? t = updatedTodo : t
     )))
   }
 
@@ -65,7 +65,7 @@ function TodoApp({ initialTodos }) {
 
           <section>
             <h3 className="mb-3">Add Nü</h3>
-            <TodoForm initialFormData={{priority:1}} handleSave={create}/>
+            <TodoForm  handleSave={create}/>
           </section>
         </div>
 

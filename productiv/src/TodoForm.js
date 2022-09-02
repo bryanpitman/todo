@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 /** Form for adding.
  *
  * Props:
@@ -8,8 +9,8 @@ import React, { useState } from "react";
  *
  * { TodoApp, EditableTodo } -> TodoForm
  */
-
-function TodoForm({ initialFormData, handleSave }) {
+const defaultData = {title: "", description: "", priority: 1};
+function TodoForm({ initialFormData=defaultData, handleSave }) {
   const [formData, setFormData] = useState(initialFormData);
 
   /** Update form input. */
@@ -25,7 +26,7 @@ function TodoForm({ initialFormData, handleSave }) {
   function handleSubmit(evt) {
     evt.preventDefault();
     handleSave(formData);
-    setFormData({title: "", description: "", priority: 1});
+    setFormData(defaultData);
   }
 
   return (

@@ -1,5 +1,7 @@
 import React from "react";
 import EditableTodo from "./EditableTodo";
+import { v4 as uuid } from "uuid";
+
 
 /** Show list of editable todos.
  *
@@ -17,8 +19,8 @@ function EditableTodoList({ todos, update, remove }) {
   //instantial teach todo as EditableTodo
 
   return (
-    <div>
-      {todos.map(t => <EditableTodo todo={t} update={update} remove={remove}/>)}
+    <div id={uuid()}>
+      {todos.map(t => <EditableTodo key={t.id} todo={t} update={update} remove={remove}/>)}
     </div>
   );
 }
